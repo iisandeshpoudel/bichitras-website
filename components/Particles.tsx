@@ -10,8 +10,8 @@ const ParticlesComponent = () => {
         await loadSlim(engine);
     }, []);
 
-    const particlesLoaded = useCallback(async (container: Container | undefined) => {
-        // console.log(container);
+    const particlesLoaded = useCallback(async (_container: Container | undefined) => {
+        // Implementation if needed
     }, []);
 
     return (

@@ -1,23 +1,51 @@
 'use client'
 
 import { useEffect } from 'react'
-import { motion, useAnimation, useScroll, useTransform, useSpring } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { BarChart, Users, Zap, MessageSquare, ArrowRight, Sun, Moon } from "lucide-react"
 import Link from "next/link"
 import { useTheme } from "next-themes"
-import { Montserrat } from 'next/font/google';
-import { useRef } from 'react'
+import { Montserrat } from 'next/font/google'
 
+// Initialize Montserrat font
+const montserrat = Montserrat({ subsets: ['latin'] })
+
+// Define animation variants
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6 }
 }
 
+const fadeUpVariant = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+}
+
+const scaleUpVariant = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+}
+
 const staggerChildren = {
+  initial: {},
   animate: {
     transition: {
       staggerChildren: 0.1
@@ -25,6 +53,7 @@ const staggerChildren = {
   }
 }
 
+// Define glow keyframes
 const glowKeyframes = `
   @keyframes subtleGlow {
     0%, 100% {
@@ -50,51 +79,10 @@ const glowKeyframes = `
       background-position: 0% 50%;
     }
   }
-
-  @keyframes glowingLight {
-    0%, 100% {
-      opacity: 0.6;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.8;
-      transform: scale(1.1);
-    }
-  }
-
-  @keyframes floatingGlow {
-    0%, 100% {
-      transform: translateY(0) scale(1);
-    }
-    50% {
-      transform: translateY(-10px) scale(1.05);
-    }
-  }
-`;
-
-const fadeUpVariant = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-};
-
-const scaleUpVariant = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: { 
-    opacity: 1, 
-    scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" }
-  }
-};
-
-const montserrat = Montserrat({ subsets: ['latin'] });
+`
 
 export function LandingPageComponent() {
   const { theme, setTheme } = useTheme()
-  const ref = useRef(null)
 
   useEffect(() => {
     const smoothScroll = (e: Event) => {
