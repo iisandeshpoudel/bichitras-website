@@ -28,29 +28,3 @@ npm install
 npm run dev
 ```
 
-## Tech Stack
-
-- **Framework:** Next.js 14.2.16
-- **Language:** TypeScript
-- **Styling:** 
-  - Tailwind CSS
-  - CSS Variables
-  - Custom animations
-- **UI Components:** 
-  - Shadcn UI
-  - Radix UI primitives
-- **Animation Libraries:**
-  - Framer Motion
-  - tsParticles
-- **Development Tools:**
-  - ESLint
-  - PostCSS
-  - Autoprefixer
-
-## Project Structure
-    ├── app/ # Next.js app router
-    ├── components/ # React components
-    │ ├── ui/ # Shadcn UI components
-    │ └── Particles.tsx # Background particle effect
-    ├── lib/ # Utility functions
-    └── types/ # TypeScript declarations
