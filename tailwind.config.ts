@@ -55,7 +55,26 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+  		boxShadow: {
+  			'premium': '0 0 15px rgba(255, 255, 255, 0.1)',
+  			'premium-hover': '0 0 30px rgba(255, 255, 255, 0.2)',
+  		},
+  		animation: {
+  			'gradient': 'gradient 8s linear infinite',
+  		},
+  		keyframes: {
+  			gradient: {
+  				'0%, 100%': {
+  					'background-size': '200% 200%',
+  					'background-position': 'left center'
+  				},
+  				'50%': {
+  					'background-size': '200% 200%',
+  					'background-position': 'right center'
+  				},
+  			},
+  		},
   	}
   },
   plugins: [require("tailwindcss-animate")],
