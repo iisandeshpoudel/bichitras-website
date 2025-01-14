@@ -1,9 +1,9 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="pt-20 pb-10 px-4 relative">
+    <footer id="contact" className="pt-20 pb-10 px-4 relative">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
@@ -15,15 +15,38 @@ const Footer = () => {
               Transforming visions into digital reality with innovation and excellence.
             </p>
             <div className="flex space-x-4">
-              {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="text-royal-celestial/80 hover:text-royal-gold transition-colors duration-200"
-                >
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a
+                href="https://www.facebook.com/profile.php?id=61569708486523"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-royal-celestial/80 hover:text-royal-gold transition-colors duration-200"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/bichitrasgroup/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-royal-celestial/80 hover:text-royal-gold transition-colors duration-200"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/bichitras/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-royal-celestial/80 hover:text-royal-gold transition-colors duration-200"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://discord.gg/E6f9DPMntU"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-royal-celestial/80 hover:text-royal-gold transition-colors duration-200"
+              >
+                <MessageCircle className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
@@ -56,16 +79,22 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
+          <div id="contact">
             <h4 className="font-bold text-white mb-4">Contact</h4>
             <ul className="space-y-2">
               <li className="flex items-center text-royal-celestial/80">
                 <Mail className="w-4 h-4 mr-2" />
-                contact@bichitras.com
+                <a href="mailto:contact@bichitras.com" className="hover:text-white transition-colors duration-200">
+                  contact@bichitras.com
+                </a>
               </li>
               <li className="flex items-center text-royal-celestial/80">
                 <Phone className="w-4 h-4 mr-2" />
-                +9846488103
+
+                <a href="tel:+9779806636668" className="hover:text-white transition-colors duration-200">
+                  +977-9806636668
+                </a>
+
               </li>
               <li className="flex items-center text-royal-celestial/80">
                 <MapPin className="w-4 h-4 mr-2" />

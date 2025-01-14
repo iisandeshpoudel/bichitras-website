@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Sparkles } from 'lucide-react';
 
 const Hero = () => {
   const particlesRef = useRef<HTMLDivElement>(null);
@@ -40,15 +39,23 @@ const Hero = () => {
       {/* Hero content */}
       <div className="relative z-10 text-center px-4">
         <div className="mb-6">
-          <Sparkles className="w-12 h-12 text-[#FFD700] mx-auto mb-4 animate-pulse" />
+          <img src="/logo.png" alt="bichitras logo" className="w-32 h-32 md:w-40 md:h-40 mx-auto" />
         </div>
         <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-[#D8B4FE] animate-title">
-          Bichitras
+          bichitras
         </h1>
         <p className="text-xl md:text-2xl text-[#D8B4FE] mb-8 animate-fadeIn">
           Your Digital Guru
         </p>
-        <button className="px-8 py-3 bg-gradient-to-r from-[#7209B7] to-[#B24BF3] rounded-full text-white font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/50">
+        <button 
+          onClick={() => {
+            const servicesSection = document.getElementById('services');
+            if (servicesSection) {
+              servicesSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+          className="px-8 py-3 bg-gradient-to-r from-[#7209B7] to-[#B24BF3] rounded-full text-white font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/50"
+        >
           Explore Our Services
         </button>
       </div>
