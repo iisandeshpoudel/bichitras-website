@@ -127,48 +127,24 @@ const Testimonials = () => {
           </div>
 
           {/* Navigation dots */}
-          <div className="flex justify-center mt-12">
-            <div className="bg-gradient-to-r from-royal-deep/30 to-royal-violet/30 backdrop-blur-sm p-4 rounded-full shadow-lg">
-              <div className="flex space-x-3">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setActiveIndex(index)}
-                    className={`relative ${
-                      index === activeIndex 
-                        ? 'w-16 h-4 bg-gradient-to-r from-royal-celestial via-royal-violet to-purple-500' 
-                        : 'w-4 h-4 bg-white/20 hover:bg-white/40'
-                    } rounded-full shadow-lg hover:scale-110 transition-all duration-300 group overflow-hidden`}
-                    aria-label={`Go to testimonial ${index + 1}`}
-                  >
-                    {index === activeIndex && (
-                      <div 
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"
-                        style={{
-                          backgroundSize: '200% 100%',
-                          animation: 'shimmer 5s linear infinite'
-                        }}
-                      />
-                    )}
-                    <span className={`absolute -top-10 left-1/2 transform -translate-x-1/2 bg-royal-deep px-3 py-1.5 rounded-lg text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap shadow-xl`}>
-                      {testimonials[index].name}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
+          <div className="flex justify-center mt-8 space-x-3">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveIndex(index)}
+                className={`transition-all duration-300 relative ${
+                  index === activeIndex 
+                    ? 'w-12 h-4 bg-gradient-to-r from-royal-celestial to-royal-violet' 
+                    : 'w-4 h-4 bg-royal-celestial/50 hover:bg-royal-celestial/70'
+                } rounded-full shadow-lg hover:scale-110 group`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              >
+                <span className={`absolute -top-8 left-1/2 transform -translate-x-1/2 bg-royal-deep px-2 py-1 rounded text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap`}>
+                  {testimonials[index].name}
+                </span>
+              </button>
+            ))}
           </div>
-
-          <style jsx>{`
-            @keyframes shimmer {
-              0% {
-                transform: translateX(-100%);
-              }
-              100% {
-                transform: translateX(100%);
-              }
-            }
-          `}</style>
         </div>
       </div>
     </section>
