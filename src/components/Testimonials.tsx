@@ -1,55 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { MessageSquare, Star, Quote } from 'lucide-react';
+import { MessageSquare, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    name: "Apekshya Shah",
+    name: "Biswas Lamichhane",
     role: "CEO, TechVision",
     content: "Bichitras has transformed our digital presence completely. Their innovative approach to web development and attention to detail has helped us achieve a 40% increase in user engagement. Their team's dedication to excellence is truly remarkable.",
-    image: "https://nepaleconomicforum.org/wp-content/uploads/2021/11/Apekshya-Shah_headshot-e1623095590109-1.jpg",
-    rating: 5
+    image: "testimonials/biswas.jpg"
   },
   {
-    name: "Amigo Khadka",
-    role: "Marketing Director, InnovateCo",
+    name: "Prabesh Poudel ",
+    role: "CEO, Towing Nepal",
     content: "The level of creativity and technical excellence they bring to every project is extraordinary. Our e-commerce platform's conversion rate doubled after their optimization work. They don't just build websites; they create digital experiences.",
-    image: "https://media.licdn.com/dms/image/v2/C4D03AQFkz0DTMja7Jw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1647852347863?e=1736380800&v=beta&t=MP5VqP8FBZ8Xv8wN4tScDwEh5k-Rhrkch0JJw5NE0jw",
-    rating: 5
+    image: "testimonials/towing-nepal.jpg"
   },
   {
-    name: "Manish Ghimire",
-    role: "Founder, DesignHub",
+    name: "Sandip Bhattarai",
+    role: "Founder, NepoLive",
     content: "Working with Bichitras has been an incredible experience. Their team's expertise in both design and development helped us launch our platform two weeks ahead of schedule. The ongoing support has been exceptional.",
-    image: "https://media.licdn.com/dms/image/v2/D4D03AQFMQwIT-Gau8g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724697353314?e=1736380800&v=beta&t=5no7yNnoMA3jfvicxT7n4jd_4B2I4A3t46XQMCgdXdI",
-    rating: 5
+    image: "/testimonials/sandip.jpg"
   },
   {
     name: "Priya Sharma",
     role: "CTO, CloudTech Nepal",
     content: "The AI integration solutions provided by Bichitras revolutionized our customer service. We've seen a 60% reduction in response time and a significant improvement in customer satisfaction scores. Their technical prowess is unmatched.",
-    image: "/testimonials/priya.jpg",
-    rating: 5
-  },
-  {
-    name: "Rajesh Hamal",
-    role: "Director, Digital Ventures",
-    content: "Bichitras delivered a complex e-learning platform for us that exceeded all expectations. The intuitive user interface and robust backend have received praise from both students and educators. A truly remarkable team!",
-    image: "/testimonials/rajesh.jpg",
-    rating: 5
-  },
-  {
-    name: "Sarah Chen",
-    role: "Product Manager, TechAsia",
-    content: "As an international client, I was impressed by Bichitras's ability to handle cross-cultural communication and deliver a product that perfectly suited our Asian market. The attention to cultural nuances in the UX design was exceptional.",
-    image: "/testimonials/sarah.jpg",
-    rating: 5
-  },
-  {
-    name: "David Miller",
-    role: "Founder, EduTech Solutions",
-    content: "The mobile app developed by Bichitras garnered over 100,000 downloads in the first month. Their expertise in React Native and ability to optimize performance while maintaining beautiful design is impressive.",
-    image: "/testimonials/david.jpg",
-    rating: 5
+    image: "/testimonials/priya.jpg"
   }
 ];
 
@@ -109,11 +84,6 @@ const Testimonials = () => {
                 </div>
                 
                 <div className="flex-1 text-center md:text-left">
-                  <div className="flex items-center justify-center md:justify-start mb-2">
-                    {[...Array(testimonials[activeIndex].rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
                   <p className="text-lg md:text-xl text-royal-celestial/90 italic mb-6">
                     "{testimonials[activeIndex].content}"
                   </p>

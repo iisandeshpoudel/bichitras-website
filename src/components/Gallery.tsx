@@ -12,7 +12,7 @@ const Gallery = () => {
           {/* First Image - Kathmandu Durbar Square */}
           <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-xl">
             <img 
-              src="/public/temple.png" 
+              src="/temple.png" 
               alt="Beautiful temple in Nepal with mountains in background" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
@@ -21,7 +21,7 @@ const Gallery = () => {
           {/* Second Image - Fewa Lake */}
           <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-xl">
             <img 
-              src="/public/lake.jpg" 
+              src="/lake.jpg" 
               alt="Scenic l`ake view with mountains in Nepal" 
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
