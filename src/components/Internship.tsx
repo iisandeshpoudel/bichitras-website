@@ -195,18 +195,19 @@ const Internship = () => {
           Discover the advantages of starting your career journey with us
         </p>
         
-        <div className="relative max-w-5xl mx-auto overflow-hidden">
+        <div className="relative w-full max-w-7xl mx-auto px-4 md:px-6">
           <Swiper
             modules={[Autoplay, Pagination]}
-            spaceBetween={30}
-            slidesPerView={3}
-            initialSlide={0}
-            loop={true}
             centeredSlides={true}
+            loop={true}
+            loopedSlides={5}
+            slidesPerView="auto"
+            initialSlide={0}
             pagination={{
+              el: '.benefits-pagination',
               clickable: true,
-              bulletActiveClass: 'swiper-pagination-bullet-active !bg-gradient-to-r !from-[var(--accent-primary)] !to-[var(--accent-secondary)] !w-12 !opacity-100',
-              bulletClass: 'swiper-pagination-bullet !bg-white/50 !w-4 !h-4 !mx-1.5 !transition-all !duration-300 hover:!bg-white/70 hover:!scale-110',
+              bulletClass: 'transition-all duration-300 w-4 h-4 bg-white/50 hover:bg-white/70 rounded-full shadow-lg hover:scale-110 group cursor-pointer',
+              bulletActiveClass: 'w-12 !bg-gradient-to-r !from-royal-celestial !to-royal-violet !opacity-100',
             }}
             autoplay={{
               delay: 3000,
@@ -214,50 +215,96 @@ const Internship = () => {
             }}
             breakpoints={{
               320: {
-                slidesPerView: 1,
+                slidesPerView: 1.5,
+                spaceBetween: 16,
               },
               640: {
-                slidesPerView: 3,
+                slidesPerView: 2.5,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3.5,
+                spaceBetween: 24,
               },
             }}
-            className="benefits-slider !pb-16"
+            className="!pb-16 !overflow-visible benefits-slider"
           >
             {benefits.map((benefit, index) => (
-              <SwiperSlide key={index} className="!w-[300px] md:!w-[350px]">
-                <div className="bg-gradient-to-br from-royal-deep/50 to-royal-violet/30 backdrop-blur-lg rounded-2xl p-6 h-full transform transition-all duration-300">
+              <SwiperSlide 
+                key={index} 
+                className="!w-[300px] md:!w-[320px] transition-all duration-300"
+              >
+                <div className="w-full h-full bg-gradient-to-br from-royal-deep/50 to-royal-violet/30 backdrop-blur-lg rounded-2xl p-6 transform transition-all duration-300 hover:scale-105">
                   <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-royal-violet to-royal-amethyst flex items-center justify-center mb-6">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-white to-royal-celestial bg-clip-text text-transparent">
+                  <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-white to-royal-celestial bg-clip-text text-transparent line-clamp-1">
                     {benefit.title}
                   </h3>
-                  <p className="text-royal-celestial/80">
+                  <p className="text-royal-celestial/80 line-clamp-3">
                     {benefit.description}
                   </p>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-      </div>
+          
+          {/* Custom pagination */}
+          <div className="benefits-pagination flex justify-center mt-8 mb-20 space-x-3"></div>
 
-      {/* Call to Action */}
-      <div className="max-w-3xl mx-auto text-center mb-20">
-        <h2 className="text-4xl font-bold mb-4">Start your journey</h2>
-        <p className="text-[var(--text-secondary)] mb-8">
-          Complete your application in just 15 mins and guarantee yourself an internship!<br />
-          Submit your application today.
-        </p>
-        <div className="flex justify-center gap-4">
-          <button 
-            onClick={() => window.open('https://forms.gle/5ix75X1B6sWo2GHg6', '_blank')}
-            className="bg-[var(--accent-primary)] text-white px-8 py-3 rounded-full hover:bg-[var(--accent-secondary)] transition-colors"
-          >
-            Enroll Now
-          </button>
-          <button className="bg-white/10 text-white px-8 py-3 rounded-full hover:bg-white/20 transition-colors">
-            How it works
-          </button>
+          <style jsx global>{`
+            .benefits-slider .swiper-slide {
+              opacity: 0.5;
+              transform: scale(0.9);
+              transition: all 0.3s ease;
+            }
+            .benefits-slider .swiper-slide-active {
+              opacity: 1;
+              transform: scale(1);
+            }
+            .benefits-pagination .swiper-pagination-bullet {
+              display: inline-block;
+              position: relative;
+            }
+            .benefits-pagination .swiper-pagination-bullet::after {
+              content: attr(aria-label);
+              position: absolute;
+              top: -2rem;
+              left: 50%;
+              transform: translateX(-50%);
+              background: var(--royal-deep);
+              padding: 0.25rem 0.5rem;
+              border-radius: 0.25rem;
+              font-size: 0.75rem;
+              color: white;
+              opacity: 0;
+              transition: opacity 0.3s;
+              white-space: nowrap;
+            }
+            .benefits-pagination .swiper-pagination-bullet:hover::after {
+              opacity: 1;
+            }
+          `}</style>
+        </div>
+
+        {/* Call to Action */}
+        <div className="max-w-3xl mx-auto text-center mb-20 pt-8">
+          <h2 className="text-4xl font-bold mb-4">Start your journey</h2>
+          <p className="text-[var(--text-secondary)] mb-8">
+            Complete your application in just 15 mins and guarantee yourself an internship!<br />
+            Submit your application today.
+          </p>
+          <div className="flex justify-center gap-4">
+            <button 
+              onClick={() => window.open('https://forms.gle/5ix75X1B6sWo2GHg6', '_blank')}
+              className="bg-[var(--accent-primary)] text-white px-8 py-3 rounded-full hover:bg-[var(--accent-secondary)] transition-colors"
+            >
+              Enroll Now
+            </button>
+            <button className="bg-white/10 text-white px-8 py-3 rounded-full hover:bg-white/20 transition-colors">
+              How it works
+            </button>
+          </div>
         </div>
       </div>
 
