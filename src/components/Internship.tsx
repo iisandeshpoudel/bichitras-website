@@ -205,8 +205,8 @@ const Internship = () => {
             centeredSlides={true}
             pagination={{
               clickable: true,
-              bulletActiveClass: 'swiper-pagination-bullet-active !bg-[var(--accent-secondary)]',
-              bulletClass: 'swiper-pagination-bullet !bg-white/30 !w-3 !h-3',
+              bulletActiveClass: 'swiper-pagination-bullet-active !bg-gradient-to-r !from-[var(--accent-primary)] !to-[var(--accent-secondary)] !w-12 !opacity-100',
+              bulletClass: 'swiper-pagination-bullet !bg-white/50 !w-4 !h-4 !mx-1.5 !transition-all !duration-300 hover:!bg-white/70 hover:!scale-110',
             }}
             autoplay={{
               delay: 3000,

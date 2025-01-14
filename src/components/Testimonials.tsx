@@ -132,10 +132,10 @@ const Testimonials = () => {
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`transition-all duration-300 relative ${
+                className={`transition-all duration-300 ${
                   index === activeIndex 
-                    ? 'w-12 h-4 bg-gradient-to-r from-royal-celestial to-royal-violet' 
-                    : 'w-4 h-4 bg-royal-celestial/50 hover:bg-royal-celestial/70'
+                    ? 'w-12 h-4 bg-gradient-to-r from-royal-celestial to-royal-violet opacity-100' 
+                    : 'w-4 h-4 bg-white/50 hover:bg-white/70'
                 } rounded-full shadow-lg hover:scale-110 group`}
                 aria-label={`Go to testimonial ${index + 1}`}
               >
