@@ -165,7 +165,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  +977-9806636668
+                  +977-9842909887
                 </a>
               </li>
               <li className="flex items-center text-royal-celestial/80">
@@ -185,7 +185,8 @@ const Footer = () => {
 
         <div className="border-t border-royal-celestial/20 pt-8 text-center text-royal-celestial/60">
           <p>
-            &copy; {new Date().getFullYear()} Bichitras. All rights reserved.
+            &copy; {new Date().getFullYear()} Bichitras Group Pvt. Ltd. All
+            rights reserved.
           </p>
         </div>
       </div>
